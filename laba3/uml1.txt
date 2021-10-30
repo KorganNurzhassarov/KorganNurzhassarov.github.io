@@ -1,0 +1,16 @@
+@startuml
+actor "Кассир-менеджер" as owner
+boundary "Графическая оболочка" as site
+boundary "Система" as app
+entity "База данных" as data
+actor "Повар" as trainee
+owner-> site : Запись заказа
+site-> app : Регистрация в системе
+app-> data : Запись в БД
+data-> app : Передача информации
+app-> site : Вывод на экран
+site-> trainee : Чтение пунктов заказа
+-> app : Рейтинг
+app-> data : Запись рейтинга
+data-> app : Информация о премиальных
+@enduml
