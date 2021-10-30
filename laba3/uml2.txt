@@ -1,0 +1,30 @@
+@startuml
+skinparam class {
+	BackgroundColor White
+	ArrowColor Black
+	BorderColor Black
+}
+
+class Information as "Информационный поток"
+class DataBase as "База данных"
+class Projects as "Заказ"
+class Tasks as "Рейтинг персонала"
+
+Class p_Project as "Код заказа"
+Class p_Materials as "Состав заказа"
+Class t_Project as "Звезды"
+Class t_task as "Выполнено заказов"
+
+Information <|-- DataBase 
+DataBase <|-- Projects
+DataBase <|-- Tasks
+
+Projects *-- p_Project
+Projects *-- p_Materials 
+Tasks *-- t_Project
+Tasks *-- t_task
+
+hide members
+hide circle
+hide methods
+@enduml
